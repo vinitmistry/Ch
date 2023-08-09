@@ -1,0 +1,10 @@
+li {
+    
+    a {
+
+        padding: 10px;
+        display: block;
+        /* list-style: none; */
+        text-decoration: none;
+    }
+}

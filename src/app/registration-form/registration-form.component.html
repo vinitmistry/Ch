@@ -1,0 +1,58 @@
+
+
+<div class="container mt-3 w-200 p-3">
+    <div class="row justify-content-center">
+      <div class="col-md-6" style="border: 1.5px; border-radius: 6px;box-shadow: 0 2px 100px rgb(188, 188, 188);">
+        <div class="d-flex justify-content-center">
+          <i class="fa-solid fa-mug-hot mt-3" style="color: #4A2C2A; font-size: 7.5rem;"></i>
+        </div>
+        <br>
+        <h2 class="justify-content-center d-flex justify-content-center" style="font-weight: 1000;font-size: x-large; ">Registration Form</h2>
+        <hr>
+        <div class="px">
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+          
+          <!-- <ngx-select [item]="></ngx-select> -->
+          <div class="form-group">
+            <i class="fa-solid fa-pen"></i>
+            <label for="arrselecter">&nbsp; Select Department</label>
+            <ngx-select [items]="item" formControlName="arrselecter" required></ngx-select>
+            <span *ngIf="!arrselecter?.valid && arrselecter?.touched" class="form__error"
+            style="color:red;margin-top:3px;font-weight: bold;">Required</span>
+          </div>
+          <br>
+          <div class="form-group">
+            <i class="fa-solid fa-user"></i>
+            <label for="employeename">&nbsp;Employee Name</label>
+            <input type="text" formControlName="employeename" class="form-control" required>
+            <span *ngIf="!employeename?.valid && employeename?.touched" class="form__error"
+            style="color:red;margin-top:3px;font-weight: bold;">Required</span>
+          </div>
+          <br>
+          <div class="form-group">
+            <i class="fas fa-envelope"></i>
+            <label for="email"> &nbsp; Email  </label>
+            <input type="email" formControlName="email" class="form-control" required>
+            <span *ngIf="!email?.valid && email?.touched" class="form__error"
+            style="color:red;margin-top:3px;font-weight: bold;">{{email.value ? 'Enter valid email':'Required'}}</span>
+          </div>
+          <br>
+          <div class="form-group">
+            <i class="fa-solid fa-lock"></i>
+            <label for="password">&nbsp;Password</label>
+            <input type="password" formControlName="password" class="form-control" required>
+            <span *ngIf="!password?.valid && password?.touched" class="form__error"
+            style="color:red;margin-top:3px;font-weight: bold;">Required</span>
+          </div>
+          <br>
+          <!-- Add more form fields as needed -->
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-block rounded-pill"  style="background-color: #4A2C2A;"[disabled]='!registrationForm.valid'>Register</button>
+          </div>
+        </form>
+      </div>
+        <br>
+      </div>
+    </div>
+  </div>
+  
