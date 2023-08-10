@@ -20,12 +20,12 @@
           <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
             <a ngbDropdownToggle class="nav-link dropdown-toggle  waves-effect"
               href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 24px; color: white;">
-              Welcome
+              Welcome, {{value}}
               <span class="mdi mdi-chevron-down"></span></a>
             <div class="dropdown-menu dropdown-menu-right animated slideInDown" ngbDropdownMenu>
               <ul class="dropdown-user">
                 <!-- <li ><a><i class="ti-user"></i> View Profile</a></li> -->
-                <li ><a class="navv"href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                <li ><a class="navv" (click)="OnLogout()"><i class="fa fa-power-off"></i> Logout</a></li>
               </ul>
             </div>
           </li>

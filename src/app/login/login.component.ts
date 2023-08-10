@@ -31,12 +31,17 @@ export class LoginComponent {
       this.ApiService.loginUser(user).subscribe((res)=>{
         // console.log(res)
         // console.log(user)
+        // console.log(res.token)
         if(res.message == 'Login successfull'){
           Swal.fire({
             icon: 'success',
             text: 'Logged In',
             confirmButtonColor:'#008000'
           })
+          let data = res.user.employeename
+          console.log(res.user)
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('username', res.user.employeename);
           this.router.navigate(['/nav']);
         }
         else{
@@ -48,7 +53,7 @@ export class LoginComponent {
           })
         }
       },(error)=>{
-    
+        console.log(error,"Errorr")
       })
      
   //     console.log(this.registrationForm);
