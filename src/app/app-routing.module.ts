@@ -4,11 +4,12 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { BootComponent } from './boot/boot.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ViewComponent } from './view/view.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegistrationFormComponent },
-    // { path: 'userdetails', component: BootComponent },
+    { path: 'view', component: ViewComponent },
     { path: 'nav', component: NavbarComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' }, 
 ]

@@ -18,13 +18,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { BootComponent } from './boot/boot.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ViewComponent } from './view/view.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationFormComponent,
     LoginComponent,
     BootComponent,
-    NavbarComponent
+    NavbarComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
