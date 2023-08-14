@@ -21,3 +21,105 @@
       </div>
     </div>
   </div> -->
+  <nav class="navbar navbar-expand-lg navbar-dark p-3" style="background-color: #4A2C2A;">
+    <div class="container-fluid">
+        
+      <a class="navbar-brand" href="#" style="font-size: 30px;"> &nbsp;&nbsp;<span><i class="fa-solid fa-mug-hot" style="color: azure; font-size: 30px;"></i></span>&nbsp;</a>
+      <!-- <a class="navbar-brand d-flex" href="#" style="font-size: 30px;"> &nbsp;&nbsp;<span style="color: azure; font-size: 20px;">LOGOUT</span>&nbsp;</a> -->
+      <div class="navbar-collapse d-flex justify-content-end">
+        <!-- ============================================================== -->
+        <!-- toggle and nav items -->
+        <!-- ============================================================== -->
+        <ul class="navbar-nav mr-auto mt-md-0">
+          <!-- This is  -->
+  
+          <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler  waves-effect waves-dark"
+              href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+        </ul>
+        <!-- ============================================================== -->
+        <!-- User profile and search -->
+        <!-- ============================================================== -->
+        <ul class="navbar-nav my-lg-0">
+          <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle  waves-effect"
+              href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 24px; color: white;">
+              Welcome
+              <span class="mdi mdi-chevron-down"></span></a>
+            <div class="dropdown-menu dropdown-menu-right animated slideInDown" ngbDropdownMenu>
+              <ul class="dropdown-user">
+                <!-- <li ><a><i class="ti-user"></i> View Profile</a></li> -->
+                <li ><a class="navv" ><i class="fa fa-power-off"></i> Logout</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <!-- <div class="dropdown"> -->
+        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button> -->
+        <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div> -->
+      <!-- </div> -->
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="container-fluid">
+            
+        </div>
+      </div> -->
+    </div>
+</nav>
+  <div class="row text-center">
+
+    <div class="col-md-4 mt-4">
+        <div class="btn-group">
+            <div class="btn btn-primary" style="background-color: #4A2C2A;" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+                Previous
+            </div>
+            <div class="btn btn-outline-secondary" style="background-color: #4A2C2A;" mwlCalendarToday [(viewDate)]="viewDate">
+                Today
+            </div>
+            <div class="btn btn-primary" style="background-color: #4A2C2A;" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+                Next
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mt-4">
+        <h1><b>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</b></h1>
+    </div>
+
+    <div class="col-md-4 mt-4">
+        <div class="btn-group">
+            <div class="btn btn-primary" (click)="setView(CalendarView.Month)" style="background-color: #4A2C2A;" [class.active]="view === CalendarView.Month">
+                Month
+            </div>
+            <div class="btn btn-primary" (click)="setView(CalendarView.Week)" style="background-color: #4A2C2A;" [class.active]="view === CalendarView.Week">
+                Week
+            </div>
+            <div class="btn btn-primary" (click)="setView(CalendarView.Day)" style="background-color: #4A2C2A;"[class.active]="view === CalendarView.Day">
+                Day
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div [ngSwitch]="view">
+
+    <mwl-calendar-month-view (dayClicked)="dayClicked($event.day)" *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events">
+    </mwl-calendar-month-view>
+
+    <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events">
+    </mwl-calendar-week-view>
+
+    <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events">
+    </mwl-calendar-day-view>
+
+</div>

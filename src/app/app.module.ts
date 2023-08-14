@@ -19,6 +19,9 @@ import { LoginComponent } from './login/login.component';
 import { BootComponent } from './boot/boot.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ViewComponent } from './view/view.component';
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,11 @@ import { ViewComponent } from './view/view.component';
     ReactiveFormsModule,
     NgbModule,
     NgxSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
