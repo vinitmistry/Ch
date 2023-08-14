@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent implements OnInit{
-  item:any[]=['Software','QC Testing']
+  item:any[]=['Software','QC Testing','Technical Documentation',"Hardware"]
   registrationForm: FormGroup = new FormGroup({});
   get firstName(){
     return this.registrationForm.get('firstName')

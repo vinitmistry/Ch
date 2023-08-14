@@ -9,3 +9,6 @@ input.ng-invalid.ng-touched
   text-decoration: none;
   color: red;
 }
+.back{
+  background-image: url('../../assets/images/converted.jpg');
+}

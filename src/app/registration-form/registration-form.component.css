@@ -2,3 +2,7 @@ input.ng-invalid.ng-touched
 {
   border:2px solid red;
 }
+
+body{
+  background-image: url('../../assets/images/converted.jpg');
+}
